@@ -1,6 +1,4 @@
 streamlit
-socket
-ssl
 python-whois
 requests
 pandas 
