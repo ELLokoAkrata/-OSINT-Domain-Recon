@@ -5,11 +5,16 @@ import whois
 import requests
 import pandas as pd
 from datetime import datetime
+from urllib.parse import urlparse
 
 st.set_page_config(page_title="OSINT Domain Recon App", layout="wide")
 st.title("🌐 OSINT Domain Recon App")
 
-domain = st.text_input("🔍 Ingresa un dominio para analizar ")
+domain_input = st.text_input("🔍 Ingresa un dominio para analizar ")
+domain = None
+if domain_input:
+    parsed = urlparse(domain_input if '://' in domain_input else f'//{domain_input}')
+    domain = parsed.hostname
 
 # Variables de exportación
 export_data = {}
