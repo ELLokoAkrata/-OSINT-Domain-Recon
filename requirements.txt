@@ -1,4 +1,7 @@
 streamlit
 python-whois
 requests
-pandas 
+pandas
+dnspython
+markdown
+weasyprint 
